@@ -44,6 +44,7 @@ public class windowBuild extends JFrame {
 
     // Default serial version ID
     private static final long serialVersionUID = 1L;
+    private static int clicked = 0;
 
     public windowBuild() {
 
@@ -84,8 +85,6 @@ public class windowBuild extends JFrame {
 
         button1.addActionListener(new ActionListener() {
 
-            int clicked = 0;
-
             // On click, set text equal to 1, after button has been pressed
             public void actionPerformed(ActionEvent event) {
 
@@ -96,6 +95,7 @@ public class windowBuild extends JFrame {
                 JOptionPane.showMessageDialog(panelTwo,
                         "You have clicked " + clicked + " times.", "Alert",
                         JOptionPane.WARNING_MESSAGE);
+
             }
         });
 
@@ -376,11 +376,6 @@ public class windowBuild extends JFrame {
                     g1.drawLine(cube1Point[i].x, cube1Point[i].y,
                             cube2Point[i].x, cube2Point[i].y);
                 }
-                // g.drawOval(60, 60, 200, 200);
-                // g.fillOval(90, 120, 50, 20);
-                // g.fillOval(190, 120, 50, 20);
-                // g.drawLine(165, 125, 165, 175);
-                // g.drawArc(110, 130, 95, 95, 0, -180);
             }
         }
     }
