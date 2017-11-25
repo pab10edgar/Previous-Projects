@@ -51,7 +51,7 @@ public class gameBoard extends JPanel implements ActionListener {
 
     // Instances of our snake & food so we can use their methods
     private snakeReptile snake = new snakeReptile();
-    private food food = new food();
+    private Food food = new Food();
 
     public gameBoard() {
 
