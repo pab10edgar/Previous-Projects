@@ -1,5 +1,7 @@
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -14,56 +16,59 @@ public class Board {
     /**
      * 
      */
-    Path p;
+    File f;
 
     public Board() {
 
     }
 
-    public Board(Path p) {
-        this.p = p;
+    public Board(File f) {
+        this.f = f;
 
     }
 
     public void makeBoard() {
-
-        int numberLocation = 0;
-        int boardWidth = 0;
-        int boardHeight = 0;
-
-        try {
-
-            Scanner s1 = new Scanner(p);
-            String configLine = s1.nextLine();
-            
-            Matcher matcher = Pattern.compile("\\d+").matcher(configLine);
-            matcher.find();
-            boardWidth = Integer.valueOf(matcher.group());
-
-            int i = 0;
-            while (i < configLine.length()
-                    && !Character.isDigit(configLine.charAt(i))) {
-                i++;
-            }
-
-            int j = i;
-            while (j < configLine.length()
-                    && Character.isDigit(configLine.charAt(j))) {
-                j++;
-            }
-
-            boardWidth = Integer.parseInt(configLine.substring(i, j));
-
-            // for (int i = 1; i < configLine.length(); i++) {
-            // if (Character.isWhitespace(configLine.charAt(i)) != true) {
-            // numberLocation++;
-            // }
-
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        
     }
+
+    
+    // int numberLocation = 0;
+    // int boardWidth = 0;
+    // int boardHeight = 0;
+    //
+    // try {
+    //
+    // Scanner s1 = new Scanner(p);
+    // String configLine = s1.nextLine();
+    //
+    // Matcher matcher = Pattern.compile("\\d+").matcher(configLine);
+    // matcher.find();
+    // boardWidth = Integer.valueOf(matcher.group());
+    //
+    // int i = 0;
+    // while (i < configLine.length()
+    // && !Character.isDigit(configLine.charAt(i))) {
+    // i++;
+    // }
+    //
+    // int j = i;
+    // while (j < configLine.length()
+    // && Character.isDigit(configLine.charAt(j))) {
+    // j++;
+    // }
+    //
+    // boardWidth = Integer.parseInt(configLine.substring(i, j));
+    //
+    // // for (int i = 1; i < configLine.length(); i++) {
+    // // if (Character.isWhitespace(configLine.charAt(i)) != true) {
+    // // numberLocation++;
+    // // }
+    //
+    // } catch (IOException e) {
+    // // TODO Auto-generated catch block
+    // e.printStackTrace();
+    // }
+    // }
 
     @Override
     public String toString() {
