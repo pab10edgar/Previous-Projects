@@ -25,7 +25,6 @@ import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.InputMap;
@@ -48,6 +47,7 @@ public class LayoutPractice extends JFrame {
 
     public LayoutPractice() {
 
+        // Initialize borders
         Border blackline;
         Border loweredBevel;
         Border compound;
@@ -95,7 +95,6 @@ public class LayoutPractice extends JFrame {
                 JOptionPane.showMessageDialog(panelTwo,
                         "You have clicked " + clicked + " times.", "Alert",
                         JOptionPane.WARNING_MESSAGE);
-
             }
         });
 
@@ -130,6 +129,7 @@ public class LayoutPractice extends JFrame {
         // Add labels to panelTwo
         panelTwo.add(moveBox);
         panelTwo.add(moveBox1);
+        
         // Set panel background color
         panelTwo.setBackground(Color.LIGHT_GRAY);
 
@@ -228,6 +228,7 @@ public class LayoutPractice extends JFrame {
 
         public class Cube {
 
+            // Amount that cube moves
             private static final int MOVE_INCREMENT = 17;
 
             int cubesize;
@@ -235,6 +236,7 @@ public class LayoutPractice extends JFrame {
             int x1;
             int y1;
 
+            // Create two arrays based on points
             Point[] cube1Point;
             Point[] cube2Point;
 
@@ -259,11 +261,14 @@ public class LayoutPractice extends JFrame {
 
             }
 
+            // Points of first square
             private Point[] c1Points() {
 
                 // Create an array of Points for each corner of the square
                 Point[] p = new Point[4];
 
+                // Add point to array based on location on square. Add to x/y repectively 
+                // to place points in correct location
                 p[0] = new Point(x1, y1);
                 p[1] = new Point(x1 + cubesize, y1);
                 p[2] = new Point(x1 + cubesize, y1 + cubesize);
@@ -272,6 +277,7 @@ public class LayoutPractice extends JFrame {
                 return p;
             }
 
+            // Points of second square
             private Point[] c2Points() {
 
                 // New x/y points that are shifted by spacing
@@ -289,6 +295,9 @@ public class LayoutPractice extends JFrame {
                 return p;
             }
 
+            /**
+            * Method to move cube to right
+            */
             public void right() {
 
                 // += because we are moving right on the x-axis
@@ -306,17 +315,23 @@ public class LayoutPractice extends JFrame {
                     p.x += MOVE_INCREMENT;
                 }
             }
-
+            
+           /**
+            * Method to move cube to left
+            */
             public void left() {
 
                 // -= because we are moving left on x-axis
                 x1 -= MOVE_INCREMENT;
 
-                // Same as right()
+                // Loop through all points in box1 and move to left based on
+                // increment
                 for (Point p : cube1Point) {
                     p.x -= MOVE_INCREMENT;
                 }
 
+                // Loop through all points in box2 and move to left same
+                // increment
                 for (Point p : cube2Point) {
                     p.x -= MOVE_INCREMENT;
                 }
@@ -336,6 +351,7 @@ public class LayoutPractice extends JFrame {
                 }
             }
 
+            // Same concept as left()/right()
             public void up() {
 
                 y1 -= MOVE_INCREMENT;
