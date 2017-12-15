@@ -22,6 +22,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.io.*;
 
 public class Markov {
+    
     /** Regular expression for breaking up words. */
     private static final String WORD_REGEX = "(?<=\\b\\s)";
     /** Regular expression for getting individual characters. */
@@ -32,7 +33,7 @@ public class Markov {
         String regex1 = WORD_REGEX;
         String regex = CHAR_REGEX;
 
-        // new random number
+        // New random number
         Random r1 = new Random();
 
         // Take in args from command line for chain order and length
@@ -41,17 +42,19 @@ public class Markov {
 
         // Create a new String Chain
         StringChain chain = new StringChain(order);
+        
         // Check args[2] for either char or word, to specify type of chain
         if (args[2].equalsIgnoreCase("word")) {
             regex = WORD_REGEX;
         }
-        // add multiple files to chain depending on args
+        // Add multiple files to chain depending on args
         for (int a = 3; a < args.length; a++) {
             String f1 = args[a];
             addFile(chain, regex, Paths.get(f1));
         }
 
         Scanner in = null;
+        
         // Generate chain and print out result
         for (String s : chain.generate(length, r1)) {
             System.out.print(s);
@@ -71,14 +74,14 @@ public class Markov {
 
         try (Scanner s1 = new Scanner(f)) {
 
-            // create a new scanner with file path
+            // Create a new scanner with file path
             // Set scanner delimiting pattern to pattern constructed from
             // string.
             s1.useDelimiter(r);
 
             // Add a sequence of items to the chain
             chain.addItems(s1);
-            // catch exception
+          
         } catch (IOException exception1) {
             exception1.printStackTrace();
         }
