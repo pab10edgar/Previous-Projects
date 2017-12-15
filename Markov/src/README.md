@@ -9,7 +9,7 @@ had been given the texts of Hamlet and Moby Dick :</h4>
 ---------------------------
 <br>HAMLET, PRINCE OF DENMARK<br>
 by William Shakespeare
-
+<br>
 PERSONS REPRESENTED.<br>
 Claudius, King of Denmark.<br>
 Hamlet, Son to the three men at her reverend helm, she sported there a tiller; and
