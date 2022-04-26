@@ -2,7 +2,6 @@
 /**
  * @author Pablo Edgar
  * Date: 11/13/17
- * Lab # 8 - GUI Layout Practice
  * 
  * Create a simple GUI that has a composite layout, and two customized JPanels.
  * 
