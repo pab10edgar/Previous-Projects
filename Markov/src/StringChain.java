@@ -2,8 +2,6 @@
  * @author Pablo Edgar
  * 11/6/2017
  *
- * Lab #7 - Markov Chain Text Generator
- *
  * A program that creates a Markov chain from a text file (or files) 
  * and generates some gibberish in a similar style
  */
